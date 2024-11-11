@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าเลือกคำร้องขอ</title>
+    <link rel="stylesheet" href="css/styles.css">    
+</head>
+<body class="bg-color">
+    <div class="bg-color">
+        <div style="text-align: center;">
+            <img src="img/image2.png" alt="TU-Logo" class="img-fluid" style="width: 150px; height: auto;">
+            <h2 class="text-center">จุดประสงค์คำร้อง</h2><br>
+            <h3 class="text-center">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h3>
+        </div>   
+
+        <div>
+            <form class="chose-from">
+                <input type="radio" name="reason" value="lateRegistration"> คำร้องจดทะเบียนล่าช้า/เพิ่มล่าช้า <br><br>
+                <input type="radio" name="reason" value="dropCourse"> คำร้องขอถอนวิชา / ถอนรายวิชา (Drop W) <br><br>
+                <input type="radio" name="reason" value="crossProgram"> คำร้องขอจดทะเบียนศึกษารายวิชาข้ามโครงการ <br><br>
+                <input type="radio" name="reason" value="resign"> คำร้องขอลาออก <br><br>
+                <input type="radio" name="reason" value="other"> คำร้องอื่น ๆ <br><br>
+            </form>
+        </div>
+
+        <div style="text-align: center;">
+            <button onclick="goToForm()" class="btn btn-primary">ยืนยัน</button>
+        </div>
+    </div>
+
+    <!-- เพิ่มลิงก์ไปที่ chose_form.js -->
+    <script src="js/chose_form.js"></script>
+</body>
+</html>
