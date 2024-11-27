@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำร้องขอเพิ่มถอนรายวิชา</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <style>
+        
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+    }
+        th, td{
+            padding: 15px;
+        }
+    </style> -->   
+</head>
+<body class="bg-color">
+    <div style="text-align: center;">
+        <img src="img/image2.png" alt="TU-Logo" class="img-fluid" style="width: 150px; height: auto;">
+        <h2 class="text-center">คำร้องจดทะเบียนล่าช้า/เพิ่มล่าช้า</h2>
+        <h3 class="text-center">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h3>
+    </div>
+    <form name = "myForm" onsubmit="return handleSubmit(event)">
+        <div align = "right">
+            <label for = "date">วันที่/เดือน/พ.ศ.</label>
+            <input type = "date" name = "date" required>
+        </div>
+        <div><dd>
+            <p>เรียน คณะบดีคณะวิทยาศาสตร์และเทคโนโลยี</p>
+        </div></dd>
+        <br>
+        <div><dd>
+            <label for = "firstname">ข้าพเจ้า</label>
+            <input type = "radio" name = "name_title"> นาย
+            <input type = "radio" name = "name_title"> นาง
+            <input type = "radio" name = "name_title"> นางสาว
+            <input type = "text" name = "fname" required readonly>
+            <label for = ID_student>เลขทะเบียน</label>
+            <input type= "number" name="ID" required minlength="10" maxlength="10" readonly>
+        </div></dd>
+        <br>
+        <div><dd>
+            <label for = "class">ชั้นปีที่</label>
+            <input type = "number" name = "Class" min = "1" max = "7" required>
+
+            <label for = "branch">สาขาวิชา</label>
+            <input type = "text" name = "Branch" required readonly>
+        </div></dd>
+        <br>
+        <div><dd>
+            ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์
+            <label for = "House_number">บ้านเลขที่</label>
+            <input type = "text" name = "hnumber" required>
+
+            <label for = "House_village">หมู่ที่</label>
+            <input type = "text" name = "hvillage" required>
+
+            <label for = "House_subdistrict">ตำบล</label>
+            <input type = "text" name = "hsubdistrict" required>
+
+            <label for = "House_district">อำเภอ</label>
+            <input type = "text" name = "hdistrict" required>
+        </div></dd>
+        <br>
+        <div><dd>
+            <label for = "House_province">จังหวัด</label>
+            <input type = "text" name = "hprovince" required>
+
+            <label for = "House_postcode">รหัสไปรษณีย์</label>
+            <input type = "text" name = "hpostcode" required>
+
+            <label for = "Phone">โทรศัพท์มือถือ</label>
+            <input type = "tel" name = "tel" required  pattern="[0-9]{9,10}">
+
+            <label for = "House_postcode">โทรศัพท์บ้าน(ถ้ามี)</label>
+            <input type = "tel" name = "hphone">
+        </div></dd>
+        <br>
+        <div><dd>
+            <label for = "email">Email</label>
+            <input type="email" name="email">
+        </div></dd>
+        <br>
+        <div><dd>
+            <label for = "Advisor">อาจารย์ที่ปรึกษา</label>
+            <input type = "text" name = "adv_teacher" required>
+        </div></dd>
+        <br><br>
+        <dd><button type="button" onclick="addRow()">+ เพิ่มวิชา</button></dd>
+        <br><br>
+        <table border="1" align="center" style="width: 96%" id="subjectTable">
+            <thead>
+                <th>ลำดับ</th>
+                <th style="width: 20%">รหัสวิชา</th>
+                <th style="width: 20%">ชื่อวิชา</th>
+                <th style="width: 20%">Section</th>
+                <th>วัน/เวลา</th>
+                <th>หน่วยกิต</th>
+                <th style="width: 20%">ชื่อผู้สอน</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">
+                        <input type= "text" name="TID_subject_1">
+                    </td>
+                    <td align="center">
+                        <input type= "text" name="Tnsubject_1">
+                    </td>
+                    <td align="center">
+                        <input type= "text" name="Tsection_1">
+                    </td>
+                    <td align="center">
+                        <input type= "datetime" name="Tdatetime_1">
+                    </td>
+                    <td align="center">
+                        <input type= "number" name="Tcredit_1" min="1" max="4">
+                    </td>
+                    <td align="center">
+                        <input type= "text" name="Tteacher_1">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <div><dd>
+            <label for = "reason_add_withdraw">เหตุผลจดทะเบียนล่าช้า/เพิ่มล่าช้า</label>
+        </div></dd>
+        <br>
+        <dd><textarea name = "why" cols="20" rows="5"></textarea></dd>
+        <br><br>
+        <div><dd>
+            <input type="submit" value="ยืนยันข้อมูล">
+        </div></dd>
+    </form>
+    <script src="js/controller.js"></script>
+
+</body>
+</html>
